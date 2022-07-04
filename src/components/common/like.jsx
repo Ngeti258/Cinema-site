@@ -6,7 +6,7 @@ class Like extends Component {
     render() { 
         let classes = 'fa fa-heart'
         if(!this.props.liked) classes += '-o'
-        return <i style={{cursor:'pointer'}} onClick={this.props.onClick} className={classes}></i>;
+        return <i onClick={this.props.onLikeToggle} style={{cursor:'pointer'}}  className={classes}/>;
     }
 }
  

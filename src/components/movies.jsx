@@ -12,15 +12,15 @@ class Movies extends Component {
         let movies=this.state.movies.filter(m=>m._id!==movie._id)
         this.setState({movies})
      }
-     handleLike=(movie)=>{
-        let movies=[...this.state.movies]
-        let index=movies.indexOf(movie)
+     handleLike=movie=>{
+        const movies=[...this.state.movies]
+        const index=movies.indexOf(movie)
         movies[index]={...movie[index]}
         movies[index].liked=!movies[index].liked
         this.setState({movies})
      }
     
-     
+      
     
     render() { 
         let { length:count }=this.state.movies
@@ -43,13 +43,13 @@ class Movies extends Component {
                     </thead>
                     <tbody>
                         {this.state.movies.map(movie=>
-                        <tr key={movie}>
+                        <tr key={movie._id}>
                             <th>{movie.title}</th>
                             <th>{movie.genre.name}</th>
                             <th>{movie.numberInStock}</th>
                             <th>{movie.dailyRentalRate}</th>
                             <th>
-                                <Like onClick={()=>this.handleLike(movie)} liked={movie.liked}/>
+                                <Like onLikeToggle={() => this.handleLike(movie)} liked={movie.liked}/>
                             </th>
                             <th><button onClick={() => this.handleDelete(movie)} className="btn btn-danger btn-sm">Delete</button></th>
                         </tr>)}
