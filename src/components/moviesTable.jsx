@@ -8,10 +8,10 @@ const MoviesTable = (props) => {
         <table className="table">
                 <thead>
                     <tr> 
-                        <td>Title</td>
-                        <td>Genre</td>
-                        <td>Stock</td>
-                        <td>Rate</td>
+                        <td  onClick={()=>onSort('title')}>Title</td>
+                        <td onClick={()=>onSort('genre.name')}>Genre</td>
+                        <td onClick={()=>onSort('numberInStock')}>Stock</td>
+                        <td onClick={()=>onSort('dailyRentals')}>Rate</td>
                         <td></td>
                         <td/>
                     </tr>
@@ -19,10 +19,10 @@ const MoviesTable = (props) => {
                 <tbody>
                     {movies.map(movie=>
                     <tr key={movie._id}>
-                        <th onClick={()=>onSort('title')}>{movie.title}</th>
-                        <th onClick={()=>onSort('genre.name')}>{movie.genre.name}</th>
-                        <th onClick={()=>onSort('numberInStock')}>{movie.numberInStock}</th>
-                        <th onClick={()=>onSort('dailyRentals')}>{movie.dailyRentalRate}</th>
+                        <th>{movie.title}</th>
+                        <th >{movie.genre.name}</th>
+                        <th>{movie.numberInStock}</th>
+                        <th>{movie.dailyRentalRate}</th>
                         <th>
                             <Like onClick={()=>onLike(movie)} liked={movie.liked}/>
                         </th>
