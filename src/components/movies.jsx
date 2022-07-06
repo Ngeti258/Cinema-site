@@ -8,7 +8,7 @@ import { getGenres } from '../services/fakeGenreService';
 import ListGroup from './common/listgroup';
 class Movies extends Component {
     state = { 
-        movies:[],
+        movies:[],   
         pageSize:4,
         currentPage:1,
         genres:[]
