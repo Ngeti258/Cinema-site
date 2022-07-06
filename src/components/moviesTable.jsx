@@ -3,7 +3,7 @@ import Like from './common/like';
 
 
 const MoviesTable = (props) => {
-    const{movies,onDelete,onLike}=props
+    const{movies,onDelete,onLike,onSort}=props
     return ( 
         <table className="table">
                 <thead>
@@ -19,10 +19,10 @@ const MoviesTable = (props) => {
                 <tbody>
                     {movies.map(movie=>
                     <tr key={movie._id}>
-                        <th>{movie.title}</th>
-                        <th>{movie.genre.name}</th>
-                        <th>{movie.numberInStock}</th>
-                        <th>{movie.dailyRentalRate}</th>
+                        <th onClick={()=>onSort('title')}>{movie.title}</th>
+                        <th onClick={()=>onSort('genre.name')}>{movie.genre.name}</th>
+                        <th onClick={()=>onSort('numberInStock')}>{movie.numberInStock}</th>
+                        <th onClick={()=>onSort('dailyRentals')}>{movie.dailyRentalRate}</th>
                         <th>
                             <Like onClick={()=>onLike(movie)} liked={movie.liked}/>
                         </th>
