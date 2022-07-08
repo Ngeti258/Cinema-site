@@ -1,9 +1,24 @@
 import React, { Component } from 'react'
 
+//column:array
 class TableHeader extends Component {
-    state = {  } 
+    raiseSort=path=>{
+        const sortColumn = {...this.props.sortColumn}
+      if(sortColumn.path === path)
+      sortColumn.order=(sortColumn.order === 'asc')?'desc':'asc'
+      else{
+         sortColumn.path=path;
+         sortColumn.order='asc'
+      }
+      this.props.onSort(sortColumn)
+    }    
     render() { 
-        return (
+        return (<thead>
+            <tr>
+                {this.props.columns.map(column=>
+                <th onClick={()=>this.raiseSort(sortColumn.path)}>{column.label}</th>)}
+            </tr
+        </thead>
 
         );
     }
