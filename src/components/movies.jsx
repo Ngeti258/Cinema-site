@@ -44,13 +44,14 @@ class Movies extends Component {
          sortColumn.order='asc';
          sortColumn.path= path;
       }      
-       this.setState({sortColumn:{path,order:'asc'}})
+       this.setState({sortColumn})
    }
     
     render() { 
         const { length:count }=this.state.movies
+
         const {pageSize,currentPage,selectedGenre,movies:allMovies,sortColumn}=this.state
-        if (count === 0)
+        if (count === 0)        
         return <p>there are no movies in the database.</p>
 
         const filtered = selectedGenre && selectedGenre._id
