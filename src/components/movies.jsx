@@ -77,9 +77,9 @@ class Movies extends Component {
             <MoviesTable 
             movies={movies}
             sortColumn={sortColumn}
-             onLike={this.handleLike}
-             onDelete={this.handleDelete}
-             onSort={this.handleSort}
+            onLike={this.handleLike}
+            onDelete={this.handleDelete}
+            onSort={this.handleSort}
              />
             <Pagination
              itemsCount={filtered.length}  
