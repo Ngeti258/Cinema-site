@@ -1,7 +1,7 @@
 import React from 'react'
 
-const MovieForm = () => {
-    return <h1>Movie Forms</h1>;
+const MovieForm = ({match}) => {
+    return <h1>Movie Forms{ match.params.id}</h1>;
 }
  
 export default MovieForm;
