@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 class LoginForm extends Component {
     render() { 
-        return <H1>login</H1>;
+        return <h1>login</h1>;
     }
 }
  
