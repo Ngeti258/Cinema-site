@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 
 class LoginForm extends Component {
-    state = {  } 
     render() { 
-        return ();
+        return <H1>login</H1>;
     }
 }
  
