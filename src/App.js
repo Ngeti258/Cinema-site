@@ -6,9 +6,9 @@ import NotFound from './components/notFound';
 import MovieForm from './components/movieForm';
 import Rentals from './components/rentals';
 import NavBar from './components/navbar';
+import LoginForm from './components/loginForm';
 import './App.css';
 import React from 'react';
-import LoginForm from './components/loginForm';
 function App() {
   return (
     <React.Fragment>
