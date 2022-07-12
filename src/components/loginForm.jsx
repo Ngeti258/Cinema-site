@@ -5,9 +5,12 @@ class LoginForm extends Component {
         return <div>
             <h1>login</h1>
             <form >
-                <div className="form-group"><label htmlFor="">UserName</label><input type="text" className="form-control" /></div>
+                <div className="form-group"><label htmlFor="username">UserName</label>
+                <input id="username" className="form-control" /></div>
 
-                <div className="form-group"><label htmlFor="">Password</label><input type="text" className="form-control" /></div>
+                <div className="form-group"><label htmlFor="password">Password</label>
+                <input id="password" className="form-control" /></div>
+                <button className="btn btn-primary">Login</button>
             </form>
         </div>;
     }
