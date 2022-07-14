@@ -14,8 +14,6 @@ class LoginForm extends Component {
 
     }
     render() { 
-
-
         const {account}=this.state
         return <div>
             <h1>login</h1>
