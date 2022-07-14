@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
 
 class LoginForm extends Component { 
+    state={
+        account:{username:'',password:''}
+    }
     handleSubmit=e=>{
         
         e.preventDefault();
+        const username=this.username.current.value;
         console.log('submitted');
     }
     handleChange=({currentTarget:input})=>{
@@ -28,8 +32,10 @@ class LoginForm extends Component {
                 className="form-control" />
                 </div>
 
-                <div className="form-group"><label htmlFor="password">Password</label>
+                <div className="form-group">
+                <label htmlFor="password">Password</label>
                 <input id="password"
+                onChange={this.handleChange}
                 name='password'
                 value={account.password}  
                 className="form-control" /></div>
