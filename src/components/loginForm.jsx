@@ -7,9 +7,9 @@ class LoginForm extends Component {
         const username=this.username.current.value;
         console.log('submitted');
     }
-    handleChange=e=>{
+    handleChange=({currentTarget:input})=>{
         const account = {...this.state.account}
-        account[''] = e.currentTarget.value;
+        account[input.name] =input.value;
         this.setState({account})
 
     }
