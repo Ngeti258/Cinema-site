@@ -25,6 +25,7 @@ class LoginForm extends Component {
                 <label htmlFor="username">UserName</label>
                 <input 
                 onChange={this.handleChange}
+                id='username'
                 name='username'
                 value={account.username} 
                 autoFocus 
