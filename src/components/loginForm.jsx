@@ -5,7 +5,7 @@ import Input from './common/input';
 
 class LoginForm extends Component { 
     state={
-        account:{username:'',password:''},
+        data:{username:'',password:''},
         errors:{ }
     }
     schema={
@@ -14,7 +14,7 @@ class LoginForm extends Component {
     }
     validate=()=>{
         const options= {abortEarly:false}
-        const {error}=Joi.validate(this.state.account,this.schema,options);
+        const {error}=Joi.validate(this.state.data,this.schema,options);
         if(!error) return null;
         const errors={}
         for(let item of error.details)
@@ -41,18 +41,18 @@ class LoginForm extends Component {
         const errorMessage=this.validateProperty(input)
         if(errorMessage) errors[input.name] = errorMessage
         else delete errors[input.name]
-        const account = {...this.state.account}
-        account[input.name] =input.value;
-        this.setState({account,errors})
+        const data = {...this.state.data}
+        data[input.name] =input.value;
+        this.setState({data,errors})
 
     }
     render() { 
-        const {account,errors }=this.state
+        const {data,errors }=this.state
         return <div>
             <h1>login</h1>
             <form onSubmit={this.handleSubmit}>
                 <Input name='username' 
-                value={account.username}
+                value={data.username}
                  label='Username' 
                  onChange={this.handleChange}
                  error={errors.username}
@@ -60,7 +60,7 @@ class LoginForm extends Component {
 
                  />
                  <Input name='password' 
-                value={account.password}
+                value={data.password}
                  label='Password' 
                  onChange={this.handleChange}
                  error={errors.password}
