@@ -30,13 +30,11 @@ class LoginForm extends Component {
         console.log('submitted');
     }
     validateProperty=({name,value})=>{
-        if(name === 'username'){
-            if(value.trim()==='')return 'Username is Required'
-        }
-        if(name === 'password'){
-            if(value.trim()==='')return 'Password is Required'
-        }
-        
+        const obj={[name]:value}
+        const schema={[name]:this.schema[name]}
+        const {error}=Joi.validate(obj,schema)
+        return error ? error.details[0].message:null
+
     }
     handleChange=({currentTarget:input})=>{
         const errors={...this.state.errors}
