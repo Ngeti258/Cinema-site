@@ -7,6 +7,7 @@ import MovieForm from './components/movieForm';
 import Rentals from './components/rentals';
 import NavBar from './components/navbar';
 import LoginForm from './components/loginForm';
+import RegisterForm from './components/register';
 import './App.css';
 import React from 'react';
 function App() {
@@ -22,6 +23,8 @@ function App() {
     <Route path='/rentals' component={Rentals}/>
     <Route path='/notFound' component={NotFound}/>
     <Route path='/moviesforms' component={MovieForm}/>
+    <Route path='/register' component={RegisterForm}/>
+
     <Redirect from='/' exact to ='/movies'/>
     <Redirect to= '/notFound'/>
     </Switch>
