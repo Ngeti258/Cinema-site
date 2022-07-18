@@ -13,11 +13,11 @@ class LoginForm extends Component {
         password:Joi.string().required().label('Password')
     }
     validate=()=>{
-        const result=Joi.validate(this.state.account,this.schema,
-            {abortEarly:false});
-        if(!result.error) return null;
+        const options= {abortEarly:false}
+        const {error}=Joi.validate(this.state.account,this.schema,options);
+        if(!error) return null;
         const errors={}
-        for(let item of result.error.details)
+        for(let item of error.details)
         errors[item.path[0]]=item.message;
         return errors
 
