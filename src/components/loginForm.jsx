@@ -22,11 +22,11 @@ class LoginForm extends Form {
     render() { 
         return <div>
             <h1>login</h1>
-            <orm onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit}>
                {this.renderInput('username','Username')}
                {this.renderInput('password','Password','password')}                
                {this.renderButton('Login')}
-            </orm>
+            </form>
         </div>;
     }
 
