@@ -3,11 +3,20 @@ import Joi from 'joi-browser';
 import Form from './common/form';
 
 class RegisterForm extends Form {
-    state = {  }
+    state = { 
+        data:{
+            username:'',password:'',name:''
+        },
+        errors:{}
+            
+        }
     schema={
-        email:Joi.email().required().label('Username'),
-        password:Joi.string().required().label('password'),
+        Username:Joi.string().email().required().label('Username'),
+        password:Joi.string().required().min(5).label('password'),
         name:Joi.string().required().label('name')
+    }
+    doSubmit=()=>{
+        console.log('Submitted');
     }
     render() { 
         return (
