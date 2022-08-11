@@ -53,7 +53,7 @@ class AddMovies extends Form{
                {this.renderSelect('genre','Genre')}
                {this.renderInput('numberInStock','Number in Stock')}
                {this.renderInput('Rate','Rate')}            
-               {this.renderButton('Svae')}
+               {this.renderButton('Save')}
             </form>
 
         );
