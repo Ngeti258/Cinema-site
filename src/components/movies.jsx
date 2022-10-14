@@ -7,13 +7,13 @@ import { getGenres } from '../services/fakeGenreService';
 import {paginate} from '../utils/paginate'
 class Movie extends Component {
    state = { 
-      movies:getMovies(),
+      movies:[],
       currentPage:1,
       pageSize:4,
       genres:[]
     };
    componentDidMount(){
-      
+      this.setState({movies:getMovies(),genres:getGenres()})
 
     }
    handleDelete= movie => {
