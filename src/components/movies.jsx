@@ -30,6 +30,9 @@ class Movie extends Component {
    handlePageChange=page=>{
       this.setState({currentPage:page});
    }
+   handleGenreSelect=genre=>{
+      
+   }
    render() {
       const {length:count}=this.state.movies;
       const {pageSize,currentPage,movies:allmovies}=this.state
@@ -38,7 +41,7 @@ class Movie extends Component {
       return(
       <div className='row'>
          <div className="col-2">  
-            <ListGroup items={this.state.genres}/>
+            <ListGroup items={this.state.genres} onItemSelect={this.handleGenreSelect}/>
          </div>         
       <div className="col">
       <p>There are {count} movies in the database</p>
