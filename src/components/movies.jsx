@@ -30,7 +30,7 @@ class Movie extends Component {
       if(count === 0) return <p>There are no movies in the database.</p>
       const movies = paginate(allmovies,currentPage,pageSize)
       return(
-      <React.Fragment>
+      <div>
       <table className="table">
          <thead>
             <tr>
@@ -65,7 +65,7 @@ class Movie extends Component {
          currentPage={currentPage}
          onPageChange={this.handlePageChange}     
       />
-      </React.Fragment>
+      </div>
       );
    };
 }
