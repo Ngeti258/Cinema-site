@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Like from './common/like';
+import ListGroup from './common/listgroup';
 import { getMovies } from '../services/fakeMovieService';
 import Pagination from './common/pagination';
 import {paginate} from '../utils/paginate'
@@ -37,7 +38,8 @@ class Movie extends Component {
                <th>Genre</th>
                <th>Stock</th>
                <th>Rate</th>
-               <th></th>
+               <th />
+               <th />
             </tr>
          </thead>
          <tbody>
