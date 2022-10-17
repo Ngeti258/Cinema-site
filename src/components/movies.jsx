@@ -35,13 +35,17 @@ class Movie extends Component {
    }
    render() {
       const {length:count}=this.state.movies;
-      const {pageSize,currentPage,movies:allmovies}=this.state
+      const {pageSize,currentPage ,movies:allmovies}=this.state
       if(count === 0) return <p>There are no movies in the database.</p>
       const movies = paginate(allmovies,currentPage,pageSize)
       return(
       <div className='row'>
          <div className="col-2">  
-            <ListGroup items={this.state.genres} onItemSelect={this.handleGenreSelect}/>
+            <ListGroup items={this.state.genres} 
+            onItemSelect={this.handleGenreSelect}
+            textProperty='name'
+            valueProperty='_id'
+            />
          </div>         
       <div className="col">
       <p>There are {count} movies in the database</p>
