@@ -43,8 +43,6 @@ class Movie extends Component {
          <div className="col-2">  
             <ListGroup items={this.state.genres} 
             onItemSelect={this.handleGenreSelect}
-            textProperty='name'
-            valueProperty='_id'
             />
          </div>         
       <div className="col">
