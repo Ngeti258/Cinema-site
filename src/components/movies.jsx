@@ -34,6 +34,9 @@ class Movie extends Component {
    handleGenreSelect=genre=>{
       this.setState({selectedGenre:genre,currentPage:1})
    }
+   handleSort=path=>{
+      console.log('path');
+   }
    render() {
       const {length:count}=this.state.movies;
       const {pageSize,currentPage,selectedGenre ,movies:allmovies}=this.state
@@ -52,11 +55,11 @@ class Movie extends Component {
       <p>There are {filtered.length} movies in the database</p>
       <table className="table">
          <thead>
-            <tr>
-               <th>Title</th>
-               <th>Genre</th>
-               <th>Stock</th>
-               <th>Rate</th>
+            <tr> 
+               <th onClick={()=>this.handleSort('title')}>Title</th>
+               <th onClick={()=>this.handleSort('genre.name')}>Genre</th>
+               <th onClick={()=>this.handleSort('numberinStock')}>Stock</th>
+               <th onClick={()=>this.handleSort('dailyRentalRate')}>Rate</th>
                <th />
                <th />
             </tr>
