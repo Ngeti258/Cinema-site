@@ -37,7 +37,14 @@ class Movie extends Component {
       this.setState({selectedGenre:genre,currentPage:1})
    }
    handleSort=path=>{
-      this.setState({sortColumn:{path,order:'asc'}})
+      const sortColumn={...this.state.sortColumn}
+      if(sortColumn.path === path)
+         sortColumn.order = (sortColumn.order === 'asc')?'desc':'asc';
+      else{
+         sortColumn.path = path;
+         sortColumn.order = 'asc'
+      }
+      this.setState({sortColumn})
    }
    render() {
       const {length:count}=this.state.movies;
