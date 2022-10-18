@@ -13,7 +13,7 @@ class Movie extends Component {
       genres:[],
       };
    componentDidMount(){
-      const genres=[{name:'All genres'},...getGenres()]
+      const genres=[{_id:'',name:'All genres'},...getGenres()]
       this.setState({movies:getMovies(),genres})
 
     }
@@ -35,7 +35,7 @@ class Movie extends Component {
       this.setState({selectedGenre:genre,currentPage:1})
    }
    handleSort=path=>{
-      console.log('path');
+      console.log(path);
    }
    render() {
       const {length:count}=this.state.movies;
@@ -58,7 +58,7 @@ class Movie extends Component {
             <tr> 
                <th onClick={()=>this.handleSort('title')}>Title</th>
                <th onClick={()=>this.handleSort('genre.name')}>Genre</th>
-               <th onClick={()=>this.handleSort('numberinStock')}>Stock</th>
+               <th onClick={()=>this.handleSort('numberInStock')}>Stock</th>
                <th onClick={()=>this.handleSort('dailyRentalRate')}>Rate</th>
                <th />
                <th />
