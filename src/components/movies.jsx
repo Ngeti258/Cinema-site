@@ -61,7 +61,7 @@ class Movie extends Component {
          />
       </div>         
       <div className="col">
-         <p>There are {totalCount.length} movies in the database</p>
+         <p>There are {totalCount} movies in the database</p>
          <MoviesTable
          movies={movies}
          sortColumn={sortColumn}
@@ -71,7 +71,7 @@ class Movie extends Component {
       />
       
       <Pagination
-         itemsCount={totalCount.length}
+         itemsCount={totalCount}
          pageSize={pageSize}
          currentPage={currentPage}
          onPageChange={this.handlePageChange}     
